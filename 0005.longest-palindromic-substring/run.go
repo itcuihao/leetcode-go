@@ -78,6 +78,7 @@ func handleString(s string) string {
 	return fmt.Sprintf("^#%s#$", strings.Join(r, "#"))
 }
 
+// Manacher
 func manacher(s string) string {
 	if len(s) == 0 {
 		return ""
