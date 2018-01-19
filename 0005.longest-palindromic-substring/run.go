@@ -1,6 +1,9 @@
 package substring
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // 超时
 func longestPalindrome(s string) string {
@@ -60,4 +63,69 @@ func isPalindrome(s string) (b bool) {
 	}
 	fmt.Println(b)
 	return
+}
+
+func handleString(s string) string {
+	l := len(s)
+	if l == 0 {
+		return "^$"
+	}
+
+	r := make([]string, 0, l)
+	for _, v := range s {
+		r = append(r, string(v))
+	}
+	return fmt.Sprintf("^#%s#$", strings.Join(r, "#"))
+}
+
+func manacher(s string) string {
+	if len(s) == 0 {
+		return ""
+	}
+	str := handleString(s)
+	ls := len(str)
+
+	p := make([]int, ls)
+	c, r := 0, 0
+
+	for i := 1; i < ls-1; i++ {
+		if r > i {
+			i2 := 2*c - i
+			if p[i2] < r-i {
+				p[i] = p[i2]
+			} else {
+				p[i] = p[r-i]
+			}
+		} else {
+			p[i] = 0
+		}
+
+		for string(str[i+1+p[i]]) == string(str[i-1-p[i]]) {
+			p[i]++
+		}
+
+		if i+p[i] > r {
+			c = i
+			r = i + p[i]
+		}
+
+	}
+
+	maxlen, centerIndex := 0, 0
+	for i := 1; i < ls-1; i++ {
+		if p[i] > maxlen {
+			maxlen = p[i]
+			centerIndex = i
+		}
+	}
+	fmt.Println(centerIndex, ":", maxlen)
+	fmt.Println("s:", s)
+
+	start := (centerIndex - 1 - maxlen) / 2
+	end := start + maxlen
+
+	fmt.Println("start:", start)
+	fmt.Println("end:", end)
+
+	return s[start:end]
 }
