@@ -1,22 +1,36 @@
 package conversion
 
+import "bytes"
+
 func convert(s string, numRows int) string {
-	if numRows == 1 {
+	ls := len(s)
+	if numRows == 1 || ls < numRows {
 		return s
 	}
-	l := numRows*2 - 2
-	ls := len(s)
-	ss := ""
 
-	for i := 0; i < numRows; i++ {
-		j := i
-		for j < ls {
-			ss += string(s[j])
-			j += l
-			if i != 0 && i != numRows-1 && i-2*j < ls {
-				ss += string(s[j-2*i])
+	buf := bytes.Buffer{}
+
+	l := numRows*2 - 2
+
+	for i := 0; i < ls; i += l {
+		buf.WriteByte(s[i])
+	}
+
+	for i := 1; i <= numRows-2; i++ {
+
+		buf.WriteByte(s[i])
+
+		for k := l; k-i < len(s); k += l {
+			buf.WriteByte(s[k-i])
+			if k+i < ls {
+				buf.WriteByte(s[k+i])
 			}
 		}
 	}
-	return ss
+
+	for i := numRows - 1; i < ls; i += l {
+		buf.WriteByte(s[i])
+	}
+
+	return buf.String()
 }
