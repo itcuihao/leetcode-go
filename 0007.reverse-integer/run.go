@@ -1,21 +1,20 @@
 package integer
 
 import (
+	"math"
 	"strconv"
 )
 
 func reverse(x int) int {
-	if x > 2147483647 || x < -2147483648 {
-		return 0
-	}
+
 	s := strconv.Itoa(x)
 	i := make([]rune, len(s))
 	l := len(s)
-	j := ""
+	j := 1
 
-	if s[0] == 45 {
+	if x < 0 {
 		s = s[1:]
-		j = "-"
+		j = -1
 	}
 
 	for k, v := range s {
@@ -36,9 +35,11 @@ func reverse(x int) int {
 	if err != nil {
 		return 0
 	}
-	if j == "-" {
+	if j < 0 {
 		x = ^x + 1 // 按位取反 +1 得到对应负数
-		return x
+	}
+	if x > math.MaxInt32 || x < math.MinInt32 {
+		return 0
 	}
 	return x
 }
