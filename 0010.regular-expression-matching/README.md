@@ -34,3 +34,5 @@ isMatch("aab", "c*a*b") → true
 [知乎-什么是动态规划](https://www.zhihu.com/question/23995189/answer/35429905?utm_medium=social&utm_source=weibo)
 
 [DP](https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)
+
+[动态规划：从新手到专家](http://www.hawstein.com/posts/dp-novice-to-advanced.html)
