@@ -8,8 +8,8 @@ import (
 func TestLengthOfLongestSubstring(t *testing.T) {
 	// s := "abca"
 	// s := "abcabcbb"
-	s := "dvdf"
-	// s := "pwwkew"
+	// s := "dvdf"
+	s := "pwwkew"
 	// s := "c"
 	t.Log(lengthOfLongestSubstring(s))
 }
