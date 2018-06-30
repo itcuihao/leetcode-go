@@ -5,7 +5,8 @@ import "fmt"
 // 到着遍历？
 func romanToInt(s string) int {
 	k := 0
-	if len(s) == 0 {
+	ls := len(s)
+	if ls == 0 {
 		return k
 	}
 	roman := map[string]int{
@@ -24,44 +25,24 @@ func romanToInt(s string) int {
 		return 0
 	}
 
-	if len(s) == 1 {
+	if ls == 1 {
 		k = getRoman(s)
 		return k
 	}
-	tmap := make(map[string]int)
-	for i := 0; i < len(s); i++ {
+
+	tn := 0
+	for i := ls - 1; i >= 0; i-- {
 		tmp := getRoman(string(s[i]))
-		fmt.Println("/", tmap)
+
 		fmt.Println("/", tmp)
 
-		if len(tmap) > 0 {
-
-			if v, ok := tmap[string(s[i])]; ok {
-				tmp -= v
-				fmt.Println(tmp)
-				k = tmp
-			} else {
-
-				k += tmp
-			}
-
-			tmap = make(map[string]int)
+		if tmp < tn {
+			k -= tmp
 		} else {
-			k = tmp
+			k += tmp
 		}
 
-		fmt.Println("k:", k)
-		switch s[i] {
-		case 'I':
-			tmap["V"] = 1
-			tmap["X"] = 1
-		case 'X':
-			tmap["L"] = 10
-			tmap["C"] = 10
-		case 'C':
-			tmap["D"] = 100
-			tmap["M"] = 100
-		}
+		tn = tmp
 
 	}
 	return k
