@@ -42,3 +42,5 @@ Example 5:
 Input: "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+- 倒序遍历，当遇到左边元素比右边小的时候就减掉
