@@ -8,8 +8,7 @@ import (
 func TestRun(t *testing.T) {
 	strs := []string{
 		"abcd",
-		"bddbc",
-		"dabc",
+		"ab",
 	}
 	fmt.Println(longestCommonPrefix(strs))
 }
