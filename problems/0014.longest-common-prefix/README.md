@@ -14,3 +14,5 @@ Explanation: There is no common prefix among the input strings.
 Note:
 
 All given inputs are in lowercase letters a-z.
+
+> 选取最短的串去进行比较
