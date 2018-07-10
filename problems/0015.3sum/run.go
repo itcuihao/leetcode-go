@@ -59,40 +59,39 @@ func min(i, j, k int) string {
 func threeSum(nums []int) [][]int {
 	var data [][]int
 	ln := len(nums)
-	if ln < 3 {
-		return data
-	}
+
 	sort.Ints(nums)
 
-	var sum int
-	for i := range nums {
+	if nums[ln-1] == 0 {
+		return data
+	}
+
+	check := make(map[string]bool)
+	for i := 0; i < ln-2; i++ {
 
 		target := -nums[i]
 		l, r := i+1, ln-1
 
 		for l < r {
-			sum = nums[l] + nums[r]
+			sum := nums[l] + nums[r]
 			switch true {
 			case sum < target:
 				l++
 			case sum > target:
 				r--
 			default:
-				tmp := []int{nums[i], nums[l], nums[r]}
+				if _, ok := check[string(i)+string(l)+string(r)]; ok {
 
-				data = append(data, tmp)
+					tmp := []int{nums[i], nums[l], nums[r]}
 
-				for l < r && nums[l] == tmp[1] {
-					l++
+					data = append(data, tmp)
+				} else {
+					check[string(i)+string(l)+string(r)] = true
 				}
-				for l < r && nums[r] == tmp[2] {
-					r--
-				}
+
 			}
 		}
-		for i+1 < ln && nums[i+1] == nums[i] {
-			i++
-		}
+
 	}
 	return data
 }
