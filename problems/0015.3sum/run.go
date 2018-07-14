@@ -74,14 +74,14 @@ func threeSum(nums []int) [][]int {
 			sum := nums[i] + nums[l] + nums[r]
 			if sum < target {
 				l++
-				for l < r && nums[l] == nums[l-1] {
-					l++
-				}
+				// for l < r && nums[l] == nums[l-1] {
+				// 	l++
+				// }
 			} else if sum > target {
 				r--
-				for l < r && nums[r] == nums[r+1] {
-					r--
-				}
+				// for l < r && nums[r] == nums[r+1] {
+				// 	r--
+				// }
 			} else {
 
 				tmp := []int{nums[i], nums[l], nums[r]}
@@ -98,25 +98,6 @@ func threeSum(nums []int) [][]int {
 			}
 		}
 
-	}
-	return data
-}
-
-func twoSum(nums []int, target int) []int {
-	fmt.Println("n:", nums)
-	fmt.Println("tar:", target)
-	data := make([]int, 0, 2)
-	if len(nums) < 2 {
-		return data
-	}
-
-	check := make(map[int]int)
-	for k, num := range nums {
-		if j, ok := check[num]; ok {
-			data = append(data, k, j)
-			return data
-		}
-		check[target-num] = k
 	}
 	return data
 }
