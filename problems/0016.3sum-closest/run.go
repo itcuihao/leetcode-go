@@ -16,7 +16,7 @@ func threeSumClosest(nums []int, target int) int {
 
 		l, r := i+1, len(nums)
 		if l < r {
-			s := nums[i] + nums[l] + nums[k]
+			s := nums[i] + nums[l] + nums[target]
 			switch true {
 			case s < target:
 				i++

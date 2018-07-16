@@ -10,6 +10,6 @@ func TestRun(t *testing.T) {
 	target := 0
 	// nums := []int{0, 0, 0, 0}
 	// nums := []int{-1, 0, 1, 0}
-	s := threeSumClosest(nums)
+	s := threeSumClosest(nums, 0)
 	fmt.Println(s)
 }
