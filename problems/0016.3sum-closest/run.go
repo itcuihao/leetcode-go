@@ -20,8 +20,10 @@ func threeSumClosest(nums []int, target int) int {
 			sum := nums[i] + nums[l] + nums[r]
 			if sum > target {
 				r--
-			} else {
+			} else if sum < target {
 				l++
+			} else {
+				return target
 			}
 
 			if math.Abs(float64(sum-target)) < math.Abs(float64(res-target)) {
