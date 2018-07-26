@@ -19,3 +19,4 @@
 |015|[3Sum](https://leetcode.com/problems/3sum/description/) | Medium|[Go](./problems/0015.3sum)|
 |016|[3Sum Closest](https://leetcode.com/problems/3sum-closest/description/) | Medium|[Go](./problems/0016.3sum-closest)|
 |017|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/) | Medium|[Go](./problems/0017.letter-combinations-of-a-phone-number)| [fun](http://cuihao.fun/ports/17.letter-combinations-of-a-phone-number/)
+|018|[4Sum](https://leetcode.com/problems/4sum/description/) | Medium|[Go](./problems/0018.4sum)| [fun]()
