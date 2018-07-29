@@ -20,6 +20,9 @@ var tn = &TreeNode{
 		},
 		Right: &TreeNode{
 			Val: 7,
+			Left: &TreeNode{
+				Val: 8,
+			},
 		},
 	},
 }

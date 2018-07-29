@@ -29,7 +29,7 @@ func postorderTraversal(root *TreeNode) []int {
 	l = append(l, postorderTraversal(root.Left)...)
 	l = append(l, postorderTraversal(root.Right)...)
 	l = append(l, root.Val)
-
+	fmt.Println(l)
 	return l
 }
 
@@ -48,10 +48,10 @@ func portorderFor(root *TreeNode) []int {
 			root = root.Left
 		}
 	}
-	fmt.Println(l)
 	lt := len(l)
 	for i := 0; i < lt/2; i++ {
 		l[i], l[lt-i-1] = l[lt-i-1], l[i]
 	}
+	fmt.Println(l)
 	return l
 }
