@@ -26,4 +26,13 @@ Could you do this in one pass?
 
 ## 思路
 
-- 循环一次找到节点返回，p.next=p.next.next
+- 利用快慢指针，设置空链表的下一个节点为list
+
+- 第一个指针先走n步
+
+- 第一个指针走到最后，第二个指针跟着走
+
+- 第二个指针走到的位置就是要删除的位置
+
+- p.next=p.next.next
+
