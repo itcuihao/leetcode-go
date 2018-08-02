@@ -7,7 +7,7 @@ import (
 
 func TestRun(t *testing.T) {
 
-	s := ""
+	s := "[({})]"
 	r := isValid(s)
 	fmt.Println(r)
 }
