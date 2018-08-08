@@ -21,4 +21,6 @@
 |017|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/) | Medium|[Go](./problems/0017.letter-combinations-of-a-phone-number)| [Fun](http://cuihao.fun/ports/17.letter-combinations-of-a-phone-number/)
 |018|[4Sum](https://leetcode.com/problems/4sum/description/) | Medium|[Go](./problems/0018.4sum)| []()
 |019|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/) | Medium|[Go](./problems/0019.remove-nth-node-from-end-of-list)| [Fun](http://cuihao.fun/ports/19.remove-nth-node-from-end-of-list/)
-|020|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/) | Medium|[Go](./problems/0020.valid-parentheses)| []()
+|020|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/) | Easy|[Go](./problems/0020.valid-parentheses)| []()
+|021|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/) | Easy|[Go](./problems/0021.merge-two-sorted-lists)| []()
+|022|[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/description/) | Medium|[Go](./problems/0022.generate-parentheses)| []()
