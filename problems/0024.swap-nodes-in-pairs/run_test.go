@@ -1,32 +1,21 @@
-package lists
+package pairs
 
 import "testing"
 
 func TestRun(t *testing.T) {
-	var ls []*ListNode
-	ls = append(ls, &ListNode{
+	var ls *ListNode
+	ls = &ListNode{
 		Val: 1,
 		Next: &ListNode{
-			Val: 4,
+			Val: 2,
 			Next: &ListNode{
-				Val: 5,
+				Val: 3,
+				Next: &ListNode{
+					Val: 4,
+				},
 			},
 		},
-	})
-	ls = append(ls, &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 3,
-			Next: &ListNode{
-				Val: 4,
-			},
-		},
-	})
-	ls = append(ls, &ListNode{
-		Val: 2,
-		Next: &ListNode{
-			Val: 6,
-		},
-	})
-	mergeKLists(ls)
+	}
+
+	swapPairs(ls)
 }
