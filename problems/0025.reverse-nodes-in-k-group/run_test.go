@@ -1,21 +1,24 @@
 package pairs
 
-import "testing"
+import (
+	"leetcode-go/structure"
+	"testing"
+)
 
 func TestRun(t *testing.T) {
-	var ls *ListNode
-	ls = &ListNode{
+	var ls *structure.ListNode
+	ls = &structure.ListNode{
 		Val: 1,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 2,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 3,
-				Next: &ListNode{
+				Next: &structure.ListNode{
 					Val: 4,
 				},
 			},
 		},
 	}
 
-	swapPairs(ls)
+	reverseKGroup(ls, 2)
 }
