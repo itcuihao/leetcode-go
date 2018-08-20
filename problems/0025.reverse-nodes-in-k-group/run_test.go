@@ -15,6 +15,9 @@ func TestRun(t *testing.T) {
 				Val: 3,
 				Next: &structure.ListNode{
 					Val: 4,
+					Next: &structure.ListNode{
+						Val: 5,
+					},
 				},
 			},
 		},
