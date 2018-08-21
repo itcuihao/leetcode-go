@@ -27,8 +27,8 @@ func reverseKGroup(head *structure.ListNode, k int) *structure.ListNode {
 
 	if count == k {
 		cur = reverseKGroup(cur, k)
-		count--
 		for count > 0 {
+			count--
 			tmp := head.Next
 			head.Next = cur
 			cur = head
