@@ -5,5 +5,6 @@ import (
 )
 
 func TestRun(t *testing.T) {
-	removeElement([]int{}, 0)
+	n := []int{3, 2, 2, 3}
+	removeElement(n, 3)
 }
