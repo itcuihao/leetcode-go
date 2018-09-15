@@ -5,5 +5,6 @@ import (
 )
 
 func TestRun(t *testing.T) {
-	strStr("", "")
+	i := strStr("hello", "ll")
+	t.Log(i)
 }
