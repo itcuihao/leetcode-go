@@ -26,3 +26,4 @@
 |022|[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/description/) | Medium |[Go](./problems/0022.generate-parentheses)| []()
 |023|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/) | Hard |[Go](./problems/0023.merge-k-sorted-lists)| []()
 |024|[Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/description/) | Medium |[Go](./problems/0024.swap-nodes-in-pairs)| []()
+|025|[Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/description/) | Medium |[Go](./problems/0025.reverse-nodes-in-k-group)| []()
