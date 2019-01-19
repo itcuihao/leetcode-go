@@ -1,7 +1,5 @@
 package permutation
 
-import "fmt"
-
 func nextPermutation(nums []int) {
 	if nums == nil || len(nums) == 0 {
 		return
@@ -16,7 +14,6 @@ func nextPermutation(nums []int) {
 		}
 	}
 
-	fmt.Println("firstSmall:", firstSmall)
 	if firstSmall == -1 {
 		reverse(nums, 0, ln-1)
 		return
@@ -29,11 +26,9 @@ func nextPermutation(nums []int) {
 			break
 		}
 	}
-	fmt.Println("firstLarge:", firstLarge)
 
-	nums[firstSmall+1], nums[firstLarge-1] = nums[firstLarge], nums[firstSmall]
+	nums[firstSmall], nums[firstLarge] = nums[firstLarge], nums[firstSmall]
 	reverse(nums, firstSmall+1, ln-1)
-	// reverse(nums, firstSmall, firstLarge)
 	return
 }
 
