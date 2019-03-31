@@ -35,3 +35,5 @@
 |0031|[Next Permutation](https://leetcode.com/problems/next-permutation/description/) | Medium |[Go](./problems/0031.next-permutation)| []()
 |0032|[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/description/) | Hard |[Go](./problems/0032.longest-valid-parentheses)| []()
 |0033|[Search In Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/) | Medium |[Go](./problems/0033.search-in-rotated-sorted-array)| []()
+|0035|[Search Insert Position](https://leetcode.com/problems/search-insert-position/description/) | Medium |[Go](./problems/0035.search-insert-position)| []()
+|0050|[Pow(x, n)](https://leetcode.com/problems/powx-n/description/) | Medium |[Go](./problems/0050.pow)| []()
