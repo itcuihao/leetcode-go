@@ -45,7 +45,7 @@ func Create(path string) {
 		return
 	}
 	rp := ps[2]
-	pname := strings.Split(rp, ".")[len(rp)-1]
+	pname := strings.Split(rp, ".")[len(strings.Split(rp, "."))-1]
 	funcn := "Run"
 
 	err = os.MkdirAll(path, os.ModePerm)
@@ -107,5 +107,6 @@ func Test%s(t *testing.T) {
 `
 
 var readme = `
-**%s**
+# %s
+
 `
