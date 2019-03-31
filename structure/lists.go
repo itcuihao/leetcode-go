@@ -8,3 +8,10 @@ type ListNode struct {
 
 // Lists 链表
 type Lists []*ListNode
+
+// TreeNode 树节点
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}

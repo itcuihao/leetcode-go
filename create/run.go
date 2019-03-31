@@ -45,7 +45,9 @@ func Create(path string) {
 		return
 	}
 	rp := ps[2]
-	pname := strings.Split(rp, ".")[len(strings.Split(rp, "."))-1]
+	pnames := strings.Split(rp, ".")[len(strings.Split(rp, "."))-1]
+	pname := strings.Split(pnames, "-")[len(strings.Split(rp, "-"))-1]
+
 	funcn := "Run"
 
 	err = os.MkdirAll(path, os.ModePerm)
