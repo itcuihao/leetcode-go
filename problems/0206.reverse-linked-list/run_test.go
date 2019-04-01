@@ -13,5 +13,9 @@ func TestRun(t *testing.T) {
 		},
 	}
 
-	t.Log(reverseList(l))
+	lr := reverseList(l)
+	for lr.Next != nil {
+		t.Log(lr.Val)
+		lr = lr.Next
+	}
 }
