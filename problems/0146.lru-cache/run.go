@@ -24,14 +24,14 @@ func Run() {
 type LRUCache struct {
 	lcap  int
 	param map[int]int
-	cir   map[int]int
+	cir   []int
 }
 
-func Constructor(capacity int) *LRUCache {
-	return &LRUCache{
+func Constructor(capacity int) LRUCache {
+	return LRUCache{
 		lcap:  capacity,
 		param: make(map[int]int, capacity),
-		cir:   make(map[int]int, capacity),
+		cir:   make([]int, 0, capacity),
 	}
 }
 
@@ -40,23 +40,42 @@ func (this *LRUCache) Get(key int) int {
 	if !ok {
 		return -1
 	}
-	this.cir[key]++
+	this.ext(key)
+	fmt.Printf("c:%v, p:%+v, r:%+v\n", this.lcap, this.param, this.cir)
 	return v
 }
 
 func (this *LRUCache) Put(key int, value int) {
-	if this.lcap == len(this.param) {
-		old := 0
-		for k, v := range this.cir {
-			if v == 0 {
-				old = k
-			}
-		}
+	_, ok := this.param[key]
+	if ok {
+		this.param[key] = value
+		this.ext(key)
+		return
+	}
+
+	if this.lcap == len(this.cir) {
+		old := this.cir[0]
 		delete(this.param, old)
-		delete(this.cir, old)
+		this.cir = this.cir[1:]
 	}
 	this.param[key] = value
-	this.cir[key] = 0
+	this.cir = append(this.cir, key)
+	this.ext(key)
+
+	fmt.Printf("c:%v, p:%+v, r:%+v\n", this.lcap, this.param, this.cir)
+
+}
+
+func (this *LRUCache) ext(key int) {
+	index := 0
+	end := len(this.cir) - 1
+	for i, v := range this.cir {
+		if key == v {
+			index = i
+		}
+	}
+	this.cir[0], this.cir[index] = this.cir[index], this.cir[0]
+	this.cir[end], this.cir[index] = this.cir[index], this.cir[end]
 }
 
 /**
