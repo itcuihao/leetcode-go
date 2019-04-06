@@ -1,8 +1,9 @@
-
 package sqrt
 
 import "testing"
 
 func TestRun(t *testing.T) {
-	Run()
+	i := 9
+	s := mySqrt(i)
+	t.Log(s)
 }
