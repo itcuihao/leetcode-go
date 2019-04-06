@@ -1,0 +1,6 @@
+
+package word
+
+func Run() {
+
+}
