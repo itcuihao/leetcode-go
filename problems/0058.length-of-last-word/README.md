@@ -13,3 +13,15 @@ Example:
 Input: "Hello World"
 Output: 5
 ```
+
+分析：
+共有多少种情况呢？
+
+```
+""
+" "
+" a"
+"a "
+"a b "
+"    "
+```
