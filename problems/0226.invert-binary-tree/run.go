@@ -1,9 +1,9 @@
-
 package tree
 
-import(
+import (
 	"leetcode-go/structure"
 )
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -12,6 +12,12 @@ import(
  *     Right *TreeNode
  * }
  */
- func invertTree(root *structure.TreeNode) *TreeNode {
-    
+func invertTree(root *structure.TreeNode) *structure.TreeNode {
+	if root == nil {
+		return nil
+	}
+	root.Left, root.Right = root.Right, root.Left
+	invertTree(root.Left)
+	invertTree(root.Right)
+	return root
 }
