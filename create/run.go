@@ -22,7 +22,7 @@ func main() {
 
 	flag.Parse()
 	path := getPath(dir, topic, num)
-	fmt.Println("path: ", path)
+
 	Create(path)
 }
 
@@ -39,11 +39,19 @@ var (
 )
 
 func Create(path string) {
-	// path := "./test"
+
+	if of, oerr := os.Stat(path); oerr == nil && of.IsDir() {
+		log.Fatalf("%s is dir", path)
+	} else if os.IsExist(oerr) {
+		log.Fatalf("%s is exist", path)
+	}
+
+	log.Printf("path is %s", path)
 	ps := strings.Split(path, "/")
 	if len(ps) != 3 {
 		return
 	}
+
 	rp := ps[2]
 	pnames := strings.Split(rp, ".")[len(strings.Split(rp, "."))-1]
 	pname := strings.Split(pnames, "-")[len(strings.Split(rp, "-"))-1]
