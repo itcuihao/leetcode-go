@@ -1,5 +1,7 @@
 package sum
 
+import "sort"
+
 // 61ms
 func twoSum(nums []int, target int) []int {
 	if len(nums) < 2 {
@@ -27,6 +29,28 @@ func twoSum2(nums []int, target int) []int {
 			return []int{i, k}
 		}
 		m[target-v] = k
+	}
+	return nil
+}
+
+func findnum(nums []int, target int) []int {
+	if len(nums) < 2 {
+		return nil
+	}
+	sort.Ints(nums)
+	start := 0
+	end := len(nums) - 1
+
+	for start < end {
+		cur := nums[start] + nums[end]
+		switch {
+		case target > cur:
+			start++
+		case target < cur:
+			end--
+		default:
+			return []int{nums[start], nums[end]}
+		}
 	}
 	return nil
 }
