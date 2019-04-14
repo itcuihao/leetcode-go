@@ -1,7 +1,7 @@
 
 # 0236.lowest-common-ancestor-of-a-binary-tree
 
-<center>![binary tree](../../static/image/binarytree.png)</center>
+![binary tree](../../static/image/binarytree.png)
 
 ```English
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
