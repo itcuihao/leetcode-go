@@ -13,8 +13,7 @@ func TestRun(t *testing.T) {
 	p := &structure.TreeNode{
 		Val: 3,
 	}
-	// ancestor := lowestCommonAncestor(root, q, p)
-	ancestor := lowestCommonAncestorStackOverflow(root, q, p)
+	ancestor := lowestCommonAncestor(root, q, p)
 
 	t.Log(ancestor)
 }
