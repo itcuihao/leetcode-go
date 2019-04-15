@@ -1,19 +1,10 @@
-package list2
+package list
 
-import (
-	"leetcode-go/structure"
-)
+import "leetcode-go/structure"
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
 // list: 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
-// out:  1 -> 2 -> 5
-// tmp: 0 -> 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
+// out:  1 -> 2 -> 3 -> 4 -> 5
+// tmp:  0 -> 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
 //      p
 // time: o(n) space: o(1)
 func deleteDuplicates(head *structure.ListNode) *structure.ListNode {
@@ -25,10 +16,7 @@ func deleteDuplicates(head *structure.ListNode) *structure.ListNode {
 	p := tmp
 	for p.Next != nil && p.Next.Next != nil {
 		if p.Next.Val == p.Next.Next.Val {
-			same := p.Next.Val
-			for p.Next != nil && p.Next.Val == same {
-				p.Next = p.Next.Next
-			}
+			p.Next = p.Next.Next
 		} else {
 			p = p.Next
 		}
