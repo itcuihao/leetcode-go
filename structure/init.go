@@ -103,3 +103,19 @@ var ListNode82 = &ListNode{
 		},
 	},
 }
+
+var ListNodeCycle = &ListNode{
+	Val: 3,
+	Next: &ListNode{
+		Val: 2,
+		Next: &ListNode{
+			Val: 0,
+			Next: &ListNode{
+				Val: 4,
+				Next: &ListNode{
+					Val: 2,
+				},
+			},
+		},
+	},
+}
