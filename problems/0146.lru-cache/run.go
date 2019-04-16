@@ -22,6 +22,7 @@ func Run() {
 }
 
 // //  别人家的：
+// 这种写法看的比价凌乱
 type node struct {
 	key  int
 	val  int
@@ -36,10 +37,12 @@ type LRUCache struct {
 }
 
 func Constructor(capacity int) LRUCache {
+	// 初始化
 	cache := LRUCache{capacity: capacity}
 	cache.mMap = make(map[int]*node)
 	cache.head = &node{key: -1, val: -1}
 
+	// 初始化链表
 	cur := cache.head
 	for i := 0; i < capacity-1; i++ {
 		node := &node{key: -1, val: -1}
@@ -55,7 +58,10 @@ func Constructor(capacity int) LRUCache {
 }
 
 func (cache *LRUCache) move2Head(cur *node) {
+
+	// 当前节点 == head节点
 	if cur == cache.head {
+		// head节点 = head的前一个节点
 		cache.head = cache.head.prev
 		return
 	}
@@ -70,25 +76,39 @@ func (cache *LRUCache) move2Head(cur *node) {
 }
 
 func (cache *LRUCache) Get(key int) int {
+	// 取值
 	node, ok := cache.mMap[key]
+	// 没有值，return -1
 	if !ok {
 		return -1
 	}
+
+	// 移动到head
 	cache.move2Head(node)
+	// 返回值
 	return node.val
 }
 
 func (cache *LRUCache) Put(key int, value int) {
+	// 判断key是否存在
 	node, ok := cache.mMap[key]
 	if ok {
+		// 存在更新value
 		node.val = value
+		// 更新head节点
 		cache.move2Head(node)
 	} else {
+		// 不存在
+		// 获取head old key
 		oldKey := cache.head.key
+		// 更新head节点key,value
 		cache.head.key = key
 		cache.head.val = value
+		// 删除 old key
 		delete(cache.mMap, oldKey)
+		// 更新map
 		cache.mMap[key] = cache.head
+		// 更新head=head.prev
 		cache.head = cache.head.prev
 	}
 }
