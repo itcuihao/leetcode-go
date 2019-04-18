@@ -1,18 +1,32 @@
 package rand7
 
-import "math/rand"
+import (
+	"math/rand"
+	"time"
+)
 
 func rand10() int {
+	// num := 41
+	// for num >= 40 {
+	// 	num = (rand7()-1)*7 + rand7() - 1
+	// }
+	// return num%10 + 1
+
+	a := rand7()
+	b := rand7()
+
 	for {
-		num := (rand7()-1)*7 + rand7()
-		if num <= 40 {
-			return num%10 + 1
+		if b <= 4 {
+			return a
+		} else if a <= 4 {
+			return b + 3
 		}
+		a = rand7()
+		b = rand7()
 	}
-	return 0
 }
 
 func rand7() int {
-	rand.Seed(7)
-	return rand.Int()
+	rand.Seed(time.Now().UTC().UnixNano())
+	return rand.Intn(7)
 }
