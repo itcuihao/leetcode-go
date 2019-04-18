@@ -74,14 +74,8 @@ func threeSum(nums []int) [][]int {
 			sum := nums[i] + nums[l] + nums[r]
 			if sum < target {
 				l++
-				// for l < r && nums[l] == nums[l-1] {
-				// 	l++
-				// }
 			} else if sum > target {
 				r--
-				// for l < r && nums[r] == nums[r+1] {
-				// 	r--
-				// }
 			} else {
 
 				tmp := []int{nums[i], nums[l], nums[r]}

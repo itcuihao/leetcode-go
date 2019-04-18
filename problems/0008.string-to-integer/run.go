@@ -58,3 +58,36 @@ func isOver(i int) bool {
 	}
 	return false
 }
+
+func atoi(s string) int {
+	s = strings.TrimSpace(s)
+	if s == "" || s == "0" {
+		return 0
+	}
+	firsts := s[0]
+	sign := 1
+	start := 0
+	res := 0
+	if firsts == '+' {
+		sign = 1
+		start++
+	} else if firsts == '-' {
+		sign = -1
+		start++
+	}
+
+	for i := start; i < len(s); i++ {
+		if s[i] < '0' || s[i] > '9' {
+			return res * sign
+		}
+		p := int(s[i] - '0')
+		res = res*10 + p
+		if sign == 1 && res > math.MaxInt32 {
+			return math.MaxInt32
+		}
+		if sign == -1 && res > math.MaxInt32 {
+			return math.MinInt32
+		}
+	}
+	return res * sign
+}
