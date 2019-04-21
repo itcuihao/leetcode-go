@@ -55,6 +55,21 @@ var BinaryTree = &TreeNode{
 		},
 	},
 }
+var BinaryTree101 = &TreeNode{
+	Val: 1,
+	Left: &TreeNode{
+		Val: 2,
+		Left: &TreeNode{
+			Val: 3,
+		},
+	},
+	Right: &TreeNode{
+		Val: 2,
+		Right: &TreeNode{
+			Val: 3,
+		},
+	},
+}
 
 var ListNodeA = &ListNode{
 	Val: 0,
