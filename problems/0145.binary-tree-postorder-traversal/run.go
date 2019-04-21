@@ -52,6 +52,5 @@ func portorderFor(root *TreeNode) []int {
 	for i := 0; i < lt/2; i++ {
 		l[i], l[lt-i-1] = l[lt-i-1], l[i]
 	}
-	fmt.Println(l)
 	return l
 }

@@ -30,3 +30,6 @@ func TestInorderTraversal(t *testing.T) {
 func TestInorderFor(t *testing.T) {
 	t.Log(inorderFor(tn))
 }
+func TestInorder1(t *testing.T) {
+	t.Log(inorder(tn))
+}
