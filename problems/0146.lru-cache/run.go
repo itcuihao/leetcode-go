@@ -190,7 +190,7 @@ type doublyLinkedNode struct {
 	key, val   int
 }
 
-// LRUCache 利用 双向链条 + hashtabl 实现
+// LRUCache 利用 双向链表 + hashtabl 实现
 type LRUCache struct {
 	// cache 的 长度 和 容量
 	len, cap int
