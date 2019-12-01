@@ -12,14 +12,14 @@ func isValid(s string) bool {
 	}
 
 	for _, i := range s {
-	
+
 		if len(st) == 0 {
 			st = append(st, i)
 			continue
 		}
 
 		t := string(st[len(st)-1]) + string(i)
-		
+
 		if _, ok := check[t]; ok {
 			st = st[:len(st)-1]
 			continue

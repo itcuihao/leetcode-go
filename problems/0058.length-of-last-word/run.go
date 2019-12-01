@@ -11,7 +11,7 @@ func lengthOfLastWord(s string) int {
 	}
 	var last []byte
 	l := len(s) - 1
-	
+
 	for i := l; i >= 0; i-- {
 		if s[i] == 32 {
 			break

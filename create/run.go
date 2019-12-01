@@ -41,9 +41,11 @@ var (
 func Create(path string) {
 
 	if of, oerr := os.Stat(path); oerr == nil && of.IsDir() {
-		log.Fatalf("%s is dir", path)
+		log.Printf("%s is dir", path)
+		return
 	} else if os.IsExist(oerr) {
-		log.Fatalf("%s is exist", path)
+		log.Printf("%s is exist", path)
+		return
 	}
 
 	log.Printf("path is %s", path)

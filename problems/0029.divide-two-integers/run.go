@@ -1,7 +1,7 @@
 package integers
 
 func divide(a int, b int) int {
-    if b == 0 {
+	if b == 0 {
 		return math.MaxInt32
 	}
 

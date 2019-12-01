@@ -14,8 +14,8 @@ func removeDuplicates(nums []int) int {
 			continue
 		}
 
-		if res!=i{
-			nums[res]=nums[i]
+		if res != i {
+			nums[res] = nums[i]
 		}
 
 		res++
