@@ -1,6 +1,8 @@
 package pairs
 
-import "leetcode-go/structure"
+import "github.com/itcuihao/leetcode-go/structure"
+
+//import "leetcode-go/structure"
 
 /**
  * Definition for singly-linked list.

@@ -1,7 +1,7 @@
 package pairs
 
 import (
-	"leetcode-go/structure"
+	"github.com/itcuihao/leetcode-go/structure"
 	"testing"
 )
 
