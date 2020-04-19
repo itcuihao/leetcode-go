@@ -8,5 +8,6 @@ func TestRun(t *testing.T) {
 		[]int{0, 1, 0},
 		[]int{1, 1, 1},
 	}
-	updateMatrix(matrix)
+	a := updateMatrix(matrix)
+	t.Logf("%+v", a)
 }
