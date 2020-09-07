@@ -1,6 +1,8 @@
 package pairs
 
-import "github.com/itcuihao/leetcode-go/structure"
+import (
+	"github.com/itcuihao/leetcode-go/structure"
+)
 
 //import "leetcode-go/structure"
 
@@ -39,4 +41,28 @@ func reverseKGroup(head *structure.ListNode, k int) *structure.ListNode {
 		head = cur
 	}
 	return head
+}
+
+func reverseKGroup2(head *structure.ListNode, k int) *structure.ListNode {
+	node := head
+	for i := 0; i < k; i++ {
+		if node == nil {
+			return head
+		}
+		node = node.Next
+	}
+	newHead := reverse(head, node)
+	head.Next = reverseKGroup2(node, k)
+	return newHead
+}
+
+func reverse(first *structure.ListNode, last *structure.ListNode) *structure.ListNode {
+	prev := last
+	for first != last {
+		tmp := first.Next
+		first.Next = prev
+		prev = first
+		first = tmp
+	}
+	return prev
 }
