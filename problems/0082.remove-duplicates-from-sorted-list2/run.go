@@ -1,7 +1,7 @@
 package list2
 
 import (
-	"leetcode-go/structure"
+	"github.com/itcuihao/leetcode-go/structure"
 )
 
 /**

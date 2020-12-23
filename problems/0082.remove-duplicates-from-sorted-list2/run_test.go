@@ -1,8 +1,9 @@
 package list2
 
 import (
-	"leetcode-go/structure"
 	"testing"
+
+	"github.com/itcuihao/leetcode-go/structure"
 )
 
 func TestRun(t *testing.T) {
