@@ -1,7 +1,7 @@
 package cycle
 
 import (
-	"leetcode-go/structure"
+	"github.com/itcuihao/leetcode-go/structure"
 )
 
 /**
