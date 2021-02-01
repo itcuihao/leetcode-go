@@ -43,3 +43,8 @@
 链接：https://leetcode-cn.com/problems/fair-candy-swap
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```
+
+根据题意，两边和相等，设A需要交换的为x，B需要交换的为y，则有
+
+>sumA-x+y=sumB-y+x
+
