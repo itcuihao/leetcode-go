@@ -55,6 +55,7 @@ var BinaryTree = &TreeNode{
 		},
 	},
 }
+
 var BinaryTree101 = &TreeNode{
 	Val: 1,
 	Left: &TreeNode{
@@ -133,4 +134,23 @@ var ListNodeCycle = &ListNode{
 			},
 		},
 	},
+}
+
+var BinaryTree98 = &TreeNode{
+	Val: 2,
+	Left: &TreeNode{
+		Val: 1,
+	},
+	Right: &TreeNode{
+		Val: 3,
+	},
+	//Right: &TreeNode{
+	//	Val: 7,
+	//	Left: &TreeNode{
+	//		Val: 6,
+	//	},
+	//	Right: &TreeNode{
+	//		Val: 8,
+	//	},
+	//},
 }
