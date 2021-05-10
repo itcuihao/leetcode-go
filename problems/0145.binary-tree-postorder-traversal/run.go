@@ -54,3 +54,26 @@ func portorderFor(root *TreeNode) []int {
 	}
 	return l
 }
+
+func postorder(root *TreeNode) []int {
+	var a []int
+	stk := make([]*TreeNode, 0)
+	var prev *TreeNode
+	for root != nil || len(stk) > 0 {
+		for root != nil {
+			stk = append(stk, root)
+			root = root.Left
+		}
+		root = stk[len(stk)-1]
+		stk = stk[:len(stk)-1]
+		if root.Right == nil || root.Right == prev {
+			a = append(a, root.Val)
+			prev = root
+			root = nil
+		} else {
+			stk = append(stk, root)
+			root = root.Right
+		}
+	}
+	return a
+}

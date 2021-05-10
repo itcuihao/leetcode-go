@@ -33,3 +33,7 @@ func TestPostorderTraversal(t *testing.T) {
 func TestPostorderFor(t *testing.T) {
 	t.Log(portorderFor(tn))
 }
+
+func TestPostorder(t *testing.T) {
+	t.Log(postorder(tn))
+}
