@@ -1,14 +1,10 @@
 package list
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import "github.com/itcuihao/leetcode-go/structure"
 
-func reverseList(head *ListNode) *ListNode {
+func reverseList(head *structure.ListNode) *structure.ListNode {
 
-	p := &ListNode{}
-
+	var p *structure.ListNode
 	for head != nil {
 		temp := head.Next
 		head.Next = p

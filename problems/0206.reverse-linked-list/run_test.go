@@ -1,20 +1,24 @@
 package list
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/itcuihao/leetcode-go/structure"
+)
 
 func TestRun(t *testing.T) {
-	l := &ListNode{
+	l := &structure.ListNode{
 		Val: 1,
-		Next: &ListNode{
+		Next: &structure.ListNode{
 			Val: 2,
-			Next: &ListNode{
+			Next: &structure.ListNode{
 				Val: 3,
 			},
 		},
 	}
 
 	lr := reverseList(l)
-	for lr.Next != nil {
+	for lr != nil {
 		t.Log(lr.Val)
 		lr = lr.Next
 	}
